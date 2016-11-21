@@ -12,7 +12,7 @@ func main() {
 	if len(argv) < 4 {
 		fmt.Println("Argument err, use port proxy example:")
 		fmt.Println("root@host:~$./proxy.exe tcp 127.0.0.1:80 192.168.1.102:8080")
-		fmt.Println("Source from https://www.github.com/JamesWone/port-proxy")
+		fmt.Println("Source from https://www.github.com/JamesWone/go-port-proxy")
 		return
 	}
 	listen, err := net.Listen(argv[1], argv[2])

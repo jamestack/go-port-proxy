@@ -79,7 +79,7 @@ func proxy_tcp_to_ws(client net.Conn) {
 	}()
 
 	for {
-		buff := make([]byte, 1024)
+		buff := make([]byte, 65535)
 		num, err := client.Read(buff)
 		if err != nil {
 			log.Println("tcp read err:", err)
@@ -132,7 +132,7 @@ func handle_ws(w http.ResponseWriter, r *http.Request) {
 
 	go func() {
 		for {
-			buff := make([]byte, 1024)
+			buff := make([]byte, 65535)
 			num, err := client.Read(buff)
 			if err != nil {
 				log.Println("tcp read err:", err)
